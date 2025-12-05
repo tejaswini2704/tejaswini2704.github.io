@@ -18,7 +18,6 @@
             background: #f4f4f4;
         }
 
-        /* Navigation */
         nav {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -54,7 +53,6 @@
             background: rgba(255,255,255,0.2);
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -110,7 +108,6 @@
             color: #667eea;
         }
 
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -146,7 +143,6 @@
             border-radius: 2px;
         }
 
-        /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -200,7 +196,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -245,7 +240,6 @@
             font-weight: bold;
         }
 
-        /* Experience Section */
         .experience-item {
             border-left: 3px solid #667eea;
             padding-left: 30px;
@@ -291,10 +285,9 @@
             line-height: 1.6;
         }
 
-        /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
@@ -321,6 +314,7 @@
         .project-card p {
             margin-bottom: 15px;
             color: #555;
+            line-height: 1.6;
         }
 
         .tech-tags {
@@ -338,7 +332,28 @@
             font-size: 0.85rem;
         }
 
-        /* Certifications */
+        .project-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
         .cert-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -368,7 +383,6 @@
             opacity: 0.9;
         }
 
-        /* Contact Section */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -414,7 +428,6 @@
             font-weight: 600;
         }
 
-        /* Footer */
         footer {
             background: #333;
             color: white;
@@ -422,7 +435,6 @@
             padding: 30px 20px;
         }
 
-        /* Animations */
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -434,7 +446,6 @@
             }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -465,7 +476,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -478,7 +488,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <h1>TEJASWINI SHIRKE</h1>
         <p class="subtitle">DevOps Engineer | Cloud Infrastructure Specialist | CI/CD Expert</p>
@@ -492,7 +501,6 @@
     </section>
 
     <div class="container">
-        <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
             <div class="about-content">
@@ -530,7 +538,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
@@ -622,7 +629,6 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience">
             <h2>Professional Experience</h2>
             
@@ -646,79 +652,117 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects">
-            <h2>Key Projects</h2>
+            <h2>Projects Portfolio</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>🚀 Multi-Cloud Infrastructure Automation</h3>
-                    <p>Architected and automated infrastructure deployment across AWS, GCP, and Azure using Terraform IaC, managing 40+ instances with automated backup strategies.</p>
+                    <h3>🚀 CI/CD Pipeline with GitHub Actions</h3>
+                    <p>Complete CI/CD pipeline that builds Docker images from source code, pushes to Docker Hub through GitHub Actions, and deploys locally using Docker/Minikube without cloud dependency.</p>
                     <div class="tech-tags">
-                        <span class="tech-tag">Terraform</span>
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">GCP</span>
-                        <span class="tech-tag">Azure</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>⚙️ End-to-End CI/CD Pipeline</h3>
-                    <p>Engineered comprehensive CI/CD pipelines with Jenkins integrated with Docker, Kubernetes, and AWS, achieving 95% success rate and reducing deployment time by 92%.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Jenkins</span>
+                        <span class="tech-tag">GitHub Actions</span>
                         <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Kubernetes</span>
-                        <span class="tech-tag">Maven</span>
+                        <span class="tech-tag">Docker Hub</span>
+                        <span class="tech-tag">Minikube</span>
+                        <span class="tech-tag">Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tejaswini2704/project" class="project-link" target="_blank">View Code</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>🐳 Kubernetes Microservices Orchestration</h3>
-                    <p>Deployed production-grade Kubernetes clusters on EKS, managing 20+ microservices with Helm charts, achieving 99.9% uptime SLA.</p>
+                    <h3>🌐 Static Website Hosting</h3>
+                    <p>Simple static website deployed using GitHub Pages demonstrating free static site hosting with HTML5 and CSS3, showcasing version control and web development skills.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                        <span class="tech-tag">Git</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tejaswini2704/my-static-website" class="project-link" target="_blank">View Code</a>
+                        <a href="https://tejaswini2704.github.io/my-static-website/" class="project-link" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🏗️ AWS 3-Tier Student Management App</h3>
+                    <p>Complete 3-tier architecture using AWS EC2 with NGINX web server, Apache Tomcat application server, and MySQL database. Implemented VPC with public/private subnets, security groups, and IAM policies.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS EC2</span>
+                        <span class="tech-tag">VPC</span>
+                        <span class="tech-tag">NGINX</span>
+                        <span class="tech-tag">Tomcat</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Security Groups</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tejaswini2704/AWS-3-Tier-Student-Management-App" class="project-link" target="_blank">View Code</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>☸️ Three-Tier App with Kubernetes</h3>
+                    <p>Production-grade Kubernetes deployment of three-tier application with Deployments, Services, ConfigMaps, and Persistent Volumes for microservices architecture.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Kubernetes</span>
-                        <span class="tech-tag">EKS</span>
                         <span class="tech-tag">Helm</span>
                         <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Microservices</span>
+                        <span class="tech-tag">YAML</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tejaswini2704/three-tier-using-Kubernetes-" class="project-link" target="_blank">View Code</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>🔒 Secure VPC Architecture</h3>
-                    <p>Designed and implemented secure VPC infrastructure with public/private subnets, NAT gateways, and security groups, reducing vulnerabilities by 45%.</p>
+                    <h3>🐳 Three-Tier App with Docker</h3>
+                    <p>Multi-tier web application using Docker containers with NGINX reverse proxy, Tomcat application server, and MySQL database orchestrated using Docker Compose with custom networks and volumes.</p>
                     <div class="tech-tags">
-                        <span class="tech-tag">AWS VPC</span>
-                        <span class="tech-tag">Security Groups</span>
-                        <span class="tech-tag">IAM</span>
-                        <span class="tech-tag">Route53</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Docker Compose</span>
+                        <span class="tech-tag">NGINX</span>
+                        <span class="tech-tag">Tomcat</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tejaswini2704/three-tier-using-docker" class="project-link" target="_blank">View Code</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>📊 Comprehensive Monitoring Solution</h3>
-                    <p>Implemented DataDog monitoring with 80+ custom metrics, intelligent alerting, and dashboards, reducing MTTD by 50% and MTTR by 40%.</p>
+                    <h3>⚡ Power of Math - Serverless App</h3>
+                    <p>Fully serverless web application built with AWS Amplify, Lambda, API Gateway, and DynamoDB. Performs mathematical operations with responsive UI, ensuring scalability and cost-efficiency.</p>
                     <div class="tech-tags">
-                        <span class="tech-tag">DataDog</span>
-                        <span class="tech-tag">CloudWatch</span>
-                        <span class="tech-tag">Alerting</span>
-                        <span class="tech-tag">Dashboards</span>
+                        <span class="tech-tag">AWS Amplify</span>
+                        <span class="tech-tag">Lambda</span>
+                        <span class="tech-tag">API Gateway</span>
+                        <span class="tech-tag">DynamoDB</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tejaswini2704/Power-of-Math" class="project-link" target="_blank">View Code</a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>💰 Cost-Optimized Static Hosting</h3>
-                    <p>Migrated static websites to S3 with CloudFront CDN, improving page load times by 60% and reducing costs by 80%.</p>
+                    <h3>📺 Netflix UI - CI/CD with SonarQube</h3>
+                    <p>Automated CI/CD pipeline using Jenkins and SonarQube for Netflix-style UI application. Integrated Docker for containerized deployment with static code analysis and quality checks.</p>
                     <div class="tech-tags">
-                        <span class="tech-tag">S3</span>
-                        <span class="tech-tag">CloudFront</span>
-                        <span class="tech-tag">Route53</span>
-                        <span class="tech-tag">Cost Optimization</span>
+                        <span class="tech-tag">Jenkins</span>
+                        <span class="tech-tag">SonarQube</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AWS EC2</span>
+                        <span class="tech-tag">GitHub</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/tejaswini2704/Netflix-UI" class="project-link" target="_blank">View Code</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certifications Section -->
         <section id="certifications">
             <h2>Certifications & Training</h2>
             <div class="cert-grid">
@@ -742,7 +786,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact">
             <h2>Get In Touch</h2>
             <div class="contact-grid">
@@ -773,7 +816,6 @@
         </section>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Tejaswini Shirke. All rights reserved.</p>
         <p>DevOps Engineer | Cloud Infrastructure Specialist</p>
