@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejaswini Shirke - DevOps Engineer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 150px 20px 100px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero .cta-buttons {
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 0 10px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: white;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .skill-category ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            border-left: 3px solid #667eea;
+            padding-left: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+
+        .experience-item h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .company {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .date {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            margin-top: 1rem;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            border-top: 4px solid #667eea;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: scale(1.05);
+        }
+
+        .cert-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .cert-card p {
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-item:hover a {
+            color: white;
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .contact-item:hover h3 {
+            color: white;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>TEJASWINI SHIRKE</h1>
+        <p class="subtitle">DevOps Engineer | Cloud Infrastructure Specialist | CI/CD Expert</p>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; opacity: 0.9;">
+            Passionate about automating infrastructure, building scalable cloud solutions, and delivering reliable systems through modern DevOps practices.
+        </p>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <a href="#projects" class="btn btn-secondary">View Projects</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="profile-img">TS</div>
+                <div class="about-text">
+                    <p>
+                        Hello! I'm Tejaswini Shirke, a results-driven DevOps Engineer with hands-on experience in cloud infrastructure automation, CI/CD pipeline development, and container orchestration across AWS, GCP, and Azure platforms.
+                    </p>
+                    <p>
+                        With a strong academic background (9.2 CGPA) and comprehensive training from Cloud Blitz Institute, I specialize in building scalable, production-ready applications using Kubernetes, Docker, Terraform, and Jenkins. I'm passionate about continuous improvement, automation, and delivering high-quality infrastructure solutions.
+                    </p>
+                    <p>
+                        My expertise includes reducing deployment time by 92%, achieving 99.9% uptime SLA, and cutting infrastructure costs by 80% through strategic automation and optimization.
+                    </p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">92%</div>
+                    <div>Deployment Time Reduction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.9%</div>
+                    <div>Uptime SLA Achieved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">80%</div>
+                    <div>Cost Reduction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">9.2</div>
+                    <div>Academic CGPA</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>☁️ Cloud Platforms</h3>
+                    <ul>
+                        <li>Amazon Web Services (AWS)</li>
+                        <li>Google Cloud Platform (GCP)</li>
+                        <li>Microsoft Azure</li>
+                        <li>EC2, S3, RDS, IAM, VPC</li>
+                        <li>Lambda, CloudFront, Route53</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🐳 Containers & Orchestration</h3>
+                    <ul>
+                        <li>Docker & Docker Compose</li>
+                        <li>Kubernetes (K8s)</li>
+                        <li>Amazon EKS</li>
+                        <li>Helm Charts</li>
+                        <li>Container Registry</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🔄 CI/CD & Automation</h3>
+                    <ul>
+                        <li>Jenkins</li>
+                        <li>GitHub Actions</li>
+                        <li>GitLab CI/CD</li>
+                        <li>Maven</li>
+                        <li>Blue-Green Deployment</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🏗️ Infrastructure as Code</h3>
+                    <ul>
+                        <li>Terraform</li>
+                        <li>Ansible</li>
+                        <li>AWS CloudFormation</li>
+                        <li>Configuration Management</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>📊 Monitoring & Observability</h3>
+                    <ul>
+                        <li>DataDog</li>
+                        <li>AWS CloudWatch</li>
+                        <li>Custom Dashboards</li>
+                        <li>Alert Management</li>
+                        <li>Log Analysis</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>💻 Programming & Scripting</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Bash Scripting</li>
+                        <li>Shell Scripting</li>
+                        <li>YAML & JSON</li>
+                        <li>Linux Administration</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🔒 Security & Quality</h3>
+                    <ul>
+                        <li>SonarQube</li>
+                        <li>Security Scanning</li>
+                        <li>IAM Policy Management</li>
+                        <li>Vulnerability Assessment</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🌐 Web Servers & Databases</h3>
+                    <ul>
+                        <li>Nginx</li>
+                        <li>Apache HTTP Server</li>
+                        <li>Apache Tomcat</li>
+                        <li>Amazon RDS</li>
+                        <li>MySQL, PostgreSQL</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>DevOps Engineer Intern</h3>
+                <div class="company">Hisan Labs Pvt Ltd, Pune, Maharashtra</div>
+                <div class="date">March 2025 - Present</div>
+                
+                <ul>
+                    <li>🚀 Architected and deployed multi-cloud infrastructure solutions across AWS, GCP, and Azure, managing 40+ EC2 instances</li>
+                    <li>🔐 Designed secure VPC architectures with private subnets, reducing security vulnerabilities by 45%</li>
+                    <li>⚡ Built end-to-end CI/CD pipelines using Jenkins, reducing deployment time by 92% (2 hours to 10 minutes)</li>
+                    <li>📦 Containerized 20+ applications using Docker and orchestrated with Kubernetes, achieving 99.9% uptime</li>
+                    <li>🏗️ Implemented Infrastructure as Code with Terraform, automating AWS resource provisioning</li>
+                    <li>📊 Deployed comprehensive monitoring with DataDog, reducing MTTD by 50% and MTTR by 40%</li>
+                    <li>🔄 Implemented blue-green deployment strategies for zero-downtime releases</li>
+                    <li>💰 Reduced infrastructure costs by 80% through S3, CloudFront, and auto-scaling optimization</li>
+                    <li>✅ Integrated SonarQube for code quality analysis, identifying 200+ vulnerabilities</li>
+                    <li>📈 Implemented ELB and ASG for auto-scaling, handling 10x traffic spikes successfully</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>🚀 Multi-Cloud Infrastructure Automation</h3>
+                    <p>Architected and automated infrastructure deployment across AWS, GCP, and Azure using Terraform IaC, managing 40+ instances with automated backup strategies.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">GCP</span>
+                        <span class="tech-tag">Azure</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>⚙️ End-to-End CI/CD Pipeline</h3>
+                    <p>Engineered comprehensive CI/CD pipelines with Jenkins integrated with Docker, Kubernetes, and AWS, achieving 95% success rate and reducing deployment time by 92%.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Jenkins</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Maven</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🐳 Kubernetes Microservices Orchestration</h3>
+                    <p>Deployed production-grade Kubernetes clusters on EKS, managing 20+ microservices with Helm charts, achieving 99.9% uptime SLA.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">EKS</span>
+                        <span class="tech-tag">Helm</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🔒 Secure VPC Architecture</h3>
+                    <p>Designed and implemented secure VPC infrastructure with public/private subnets, NAT gateways, and security groups, reducing vulnerabilities by 45%.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS VPC</span>
+                        <span class="tech-tag">Security Groups</span>
+                        <span class="tech-tag">IAM</span>
+                        <span class="tech-tag">Route53</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>📊 Comprehensive Monitoring Solution</h3>
+                    <p>Implemented DataDog monitoring with 80+ custom metrics, intelligent alerting, and dashboards, reducing MTTD by 50% and MTTR by 40%.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">DataDog</span>
+                        <span class="tech-tag">CloudWatch</span>
+                        <span class="tech-tag">Alerting</span>
+                        <span class="tech-tag">Dashboards</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>💰 Cost-Optimized Static Hosting</h3>
+                    <p>Migrated static websites to S3 with CloudFront CDN, improving page load times by 60% and reducing costs by 80%.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">S3</span>
+                        <span class="tech-tag">CloudFront</span>
+                        <span class="tech-tag">Route53</span>
+                        <span class="tech-tag">Cost Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications & Training</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h3>🎓 DevOps Engineering Course</h3>
+                    <p>Cloud Blitz Institute, Pune</p>
+                    <p>January 2025 - July 2025</p>
+                </div>
+
+                <div class="cert-card">
+                    <h3>☁️ AWS Cloud Practitioner Essentials</h3>
+                    <p>AWS Skill Builder</p>
+                    <p>July 2025</p>
+                </div>
+
+                <div class="cert-card">
+                    <h3>🏗️ AWS APAC Solutions Architecture</h3>
+                    <p>Job Simulation</p>
+                    <p>Amazon Web Services</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:shirketejaswini10@gmail.com">shirketejaswini10@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <a href="tel:+917887499226">+91 7887499226</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/tejaswini-shirke-85aa3a27a" target="_blank">Connect with me</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/tejaswini2704" target="_blank">View my code</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tejaswini Shirke. All rights reserved.</p>
+        <p>DevOps Engineer | Cloud Infrastructure Specialist</p>
+    </footer>
+</body>
+</html>
